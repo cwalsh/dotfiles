@@ -8,20 +8,16 @@ noremap <F6> :bnext!<CR>
 noremap <F5> :bprev!<CR>
 inoremap <F6> :bnext!<CR>
 inoremap <F5> :bprev!<CR>
-noremap <F8> :tabnext<CR>
-noremap <F7> :tabprev!<CR>
-inoremap <F8> :tabnext!<CR>
-inoremap <F7> :tabprev!<CR>
 
 call pathogen#infect()
 syntax on
 filetype on
 au BufNewFile,BufRead,BufWrite *.dump set filetype=sql
-au BufNewFile,BufRead,BufWrite Gemfile,Gemfile.lock,config.ru,*.rabl set filetype=ruby
+au BufNewFile,BufRead,BufWrite Vagrantfile,Gemfile,Gemfile.lock,config.ru,*.rabl,*.pp set filetype=ruby
 au BufNewFile,BufRead,BufWrite *.yml set filetype=yaml
-au BufNewFile,BufRead,BufWrite *.json set filetype=javascript
+au BufNewFile,BufRead,BufWrite composer.lock set filetype=json
 au BufNewFile,BufRead,BufWrite *.twig set filetype=php
-autocmd FileType sh,spec,c,cpp,python,ruby,java,yaml,javascript,html,css,coffee,haml,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType json,sh,spec,c,cpp,python,ruby,java,yaml,javascript,html,css,coffee,haml,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType php set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
 
 map <leader>h              :wincmd h<cr>
