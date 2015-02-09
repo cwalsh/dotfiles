@@ -3,9 +3,17 @@
 	email = cameron.walsh@gmail.com
 [alias]
         l = "log --graph --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %an%C(green): %s %C(white) (%ar%Creset)\""
+        rl = "reflog --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %an%C(green): %s %C(white) (%ar%Creset)\""
+        assume = "update-index --assume-unchanged"
+        unassume = "update-index --no-assume-unchanged"
 [push]
-        default = upstream
+	default = upstream
 [core]
 	editor = vim
+	excludesfile = /Users/cameron.walsh/.gitignore_global
 [color]
 	ui = true
+[help]
+	autocorrect = 1
+[url "git@github.com:"]
+	insteadOf = https://github.com/
