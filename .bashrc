@@ -118,8 +118,8 @@ export EDITOR=$VIM
 
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1.25
-export RUBY_HEAP_MIN_SLOTS=800000
-export RUBY_FREE_MIN=600000
+export RUBY_GC_HEAP_INIT_SLOTS=800000
+export RUBY_GC_HEAP_FREE_SLOTS=600000
 #export LD_PRELOAD=/usr/lib64/libtcmalloc_minimal.so.4
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
