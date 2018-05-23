@@ -77,9 +77,6 @@ alias ks='ls'
 alias kls='ls'
 alias lks='ls'
 
-# Everyone needs X, servers are meant to run gui apps, right?
-alias ssh='ssh -X'
-
 alias vi='vim'
 
 # Bundler aliases
