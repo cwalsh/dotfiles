@@ -113,7 +113,6 @@ function rvm_version {
 }
 
 # And this puts it at the end of your prompt.
-export PS1='\[\033[0;32m\]\u@\h:\w\[\033[0;37m\] $(rvm_version) $(parse_git_branch)\n\[\033[0;33m\]⚡\[\033[0;37m\] '
 export EDITOR=$VIM
 
 export RUBY_GC_MALLOC_LIMIT=1000000000
@@ -133,3 +132,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 
 source ~/.dev_profile
+
+export PS1='\[\033[0;32m\]\u@\h:\w\[\033[0;37m\] $(rvm_version) $(parse_git_branch)\n\[\033[0;33m\]$\[\033[0;37m\] '
