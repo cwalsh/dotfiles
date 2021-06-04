@@ -1,4 +1,7 @@
-export PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:/usr/local/scala/current/bin:/Users/cameron.walsh/Library/Python/2.7/bin
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export DISABLE_SPRING=true
 # Shortcut to touch tmp/restart.txt for restarting passenger apps. Complain if wrong directory.
 function ttr {
   if [ -x tmp ]; then
@@ -55,6 +58,7 @@ function ss {
     fi
   fi
 }
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
@@ -121,11 +125,27 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+
+#export LDFLAGS="-L/usr/local/opt/sqlite/lib:$LDFLAGS"
+#export CPPFLAGS="-I/usr/local/opt/sqlite/include:$CPPFLAGS"
+
+export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig:$PKG_CONFIG_PATH"
+
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 source ~/.dev_profile
 
-export PS1='\[\033[0;32m\]\u@\h:\w\[\033[0;37m\] $(rvm_version) $(parse_git_branch)\n\[\033[0;33m\]$\[\033[0;37m\] '
+export PS1='\[\033[0;32m\]\u@\h:\w\[\033[0;37m\] $(rbenv version-name) $(parse_git_branch)\n\[\033[0;33m\]$\[\033[0;37m\] '
+
+# Set by mco_client_install.sh
+export PATH=$PATH:$HOME/code/puppet_projects/puppet/tools:$HOME/bin
+source ~/bin/mco_wrapper.sh
+
+# added by travis gem
+[ -f /Users/cameron.walsh/.travis/travis.sh ] && source /Users/cameron.walsh/.travis/travis.sh
+
+alias gshs=gssh
+
+export PATH="${HOME}/.sbtenv/bin:${HOME}/.scalaenv/bin:${PATH}"
