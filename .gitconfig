@@ -1,6 +1,6 @@
 [user]
 	name = Cameron Walsh
-	email = cameron.walsh@gmail.com
+	email = cameron.walsh@bigcommerce.com
 [alias]
         l = "log --graph --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %an%C(green): %s %C(white) (%ar%Creset)\""
         rl = "reflog --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %an%C(green): %s %C(white) (%ar%Creset)\""
@@ -17,3 +17,9 @@
 	autocorrect = 1
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[url "git@github.com:bigcommerce/"]
+	insteadOf = https://github.com/bigcommerce/
+[url "git@github.com:bigcommerce-labs/"]
+	insteadOf = https://github.com/bigcommerce-labs/
+[pull]
+	ff = only
